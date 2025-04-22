@@ -1,6 +1,7 @@
 package org.ano.app.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -69,8 +70,8 @@ public class Film {
             joinColumns = @JoinColumn(name = "film_id"),
             inverseJoinColumns = @JoinColumn(name = "actor_id")
     )
+    @JsonIgnore  // Ajouté pour éviter la boucle infinie
     private List<Actor> actors = new ArrayList<>();
-
 
     @ManyToOne
     @JoinTable(

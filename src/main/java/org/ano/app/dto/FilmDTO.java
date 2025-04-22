@@ -3,8 +3,10 @@ package org.ano.app.dto;
 import org.ano.app.model.Category;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class FilmDTO {
+    private List<ActorDTO> actors ;
     private Category category;
     private Short filmId;
     private String title;
@@ -16,7 +18,7 @@ public class FilmDTO {
     // Constructeurs, getters et setters
     public FilmDTO() {}
 
-    public FilmDTO(Short filmId, String title, Category category, String description, Short releaseYear, Short length, BigDecimal rental_rate) {
+    public FilmDTO(Short filmId, String title, Category category, String description, Short releaseYear, Short length, BigDecimal rental_rate,List<ActorDTO> actors) {
         this.filmId = filmId;
         this.title = title;
         this.category = category;
@@ -24,6 +26,15 @@ public class FilmDTO {
         this.releaseYear = releaseYear;
         this.length = length;
         this.rental_rate = rental_rate;
+        this.actors = actors;
+    }
+
+    public List<ActorDTO> getActors() {
+        return actors;
+    }
+
+    public void setActors(List<ActorDTO> actors) {
+        this.actors = actors;
     }
 
     public Short getFilmId() {

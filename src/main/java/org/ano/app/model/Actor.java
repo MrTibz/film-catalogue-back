@@ -23,9 +23,11 @@ public class Actor {
     @Basic
     @Column(name = "last_update")
     private Timestamp last_update;
+
     @ManyToMany(mappedBy = "actors")
-    @JsonIgnore
+    @JsonIgnore  // Ajouté pour éviter la boucle infinie
     private Set<Film> films = new HashSet<>();
+
 
 
     public short getActor_id() {return actor_id;}
