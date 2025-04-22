@@ -48,7 +48,7 @@ public class FilmService {
     public List<FilmLiteDTO> getFilmsByActorIdLiteDTO(short actorId) {
         List<Film> films = getFilmsByActorId(actorId);
         return films.stream()
-                .map(film -> new FilmLiteDTO(film.getFilmId(), film.getTitle()))
+                .map(film -> new FilmLiteDTO(film.getFilmId(), film.getTitle(), film.getDescription()))
                 .collect(Collectors.toList());
     }
 
