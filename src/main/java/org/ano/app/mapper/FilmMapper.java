@@ -1,7 +1,9 @@
 package org.ano.app.mapper;
 
 import org.ano.app.dto.ActorDTO;
+import org.ano.app.dto.CategoryDTO;
 import org.ano.app.dto.FilmDTO;
+import org.ano.app.model.Category;
 import org.ano.app.model.Film;
 
 import java.util.List;
@@ -14,11 +16,16 @@ public class FilmMapper {
                 .map(a -> new ActorDTO(a.getFirst_name(), a.getLast_name()))
                 .collect(Collectors.toList());
 
+        Category category = film.getCategory();
+        CategoryDTO categoryDTO = null;
+        if (category != null) {
+            categoryDTO = new CategoryDTO(category.getCategory_id(), category.getName());
+        }
         return new FilmDTO(
 
                 film.getFilmId(),
                 film.getTitle(),
-                film.getCategory(),
+                categoryDTO,
                 film.getDescription(),
                 film.getRelease_year(),
                 film.getLength(),

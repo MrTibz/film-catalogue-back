@@ -8,6 +8,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.ano.app.dto.FilmDTO;
+import org.ano.app.dto.FilmLiteDTO;
 import org.ano.app.mapper.FilmMapper;
 import org.ano.app.model.Film;
 import org.ano.app.model.repository.FilmRepository;
@@ -122,7 +123,7 @@ public class FilmResource {
         // Récupérer le nom de la catégorie une seule fois
         String categoryName = filmRepository.pagedCategory(page, categoryId)
                 .findFirst()
-                .map(f -> f.getCategory().getName())
+                .map(f -> f.getCategoryDTO().getName())
                 .orElse("Unknown Category");
 
         // Utiliser AtomicInteger pour la numérotation
@@ -153,9 +154,8 @@ public class FilmResource {
 
     @GET
     @Path("/actor/{actorId}/films")
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<FilmDTO> getFilmsByActorId(short actorId) {
-        return filmService.getFilmsByActorId(actorId);
+    public List<FilmLiteDTO> getFilmsByActor(short actorId) {
+        return filmService.getFilmsByActorIdLiteDTO(actorId);
     }
 
     @GET

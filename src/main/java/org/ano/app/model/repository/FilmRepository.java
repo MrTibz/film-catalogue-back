@@ -92,18 +92,8 @@ public class FilmRepository {
         return jpaStreamer.stream(Film.class);
     }
 
-    @PersistenceContext
-    EntityManager em;
 
-    public List<Film> getFilmsByActorId(short actorId) {
-        return em.createQuery("""
-        SELECT f FROM Film f
-        JOIN f.actors a
-        WHERE a.actor_id = :actorId
-    """, Film.class)
-                .setParameter("actorId", actorId)
-                .getResultList();
-    }
+
 
 
     public Stream<Film> getFilmsByActorName(String actorName) {

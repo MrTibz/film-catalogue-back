@@ -1,13 +1,16 @@
 package org.ano.app.dto;
 
+import org.ano.app.mapper.FilmMapper;
 import org.ano.app.model.Category;
+import org.ano.app.model.Film;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FilmDTO {
     private List<ActorDTO> actors ;
-    private Category category;
+    private CategoryDTO categoryDTO;
     private Short filmId;
     private String title;
     private String description;
@@ -18,10 +21,10 @@ public class FilmDTO {
     // Constructeurs, getters et setters
     public FilmDTO() {}
 
-    public FilmDTO(Short filmId, String title, Category category, String description, Short releaseYear, Short length, BigDecimal rental_rate,List<ActorDTO> actors) {
+    public FilmDTO(Short filmId, String title, CategoryDTO categoryDTO, String description, Short releaseYear, Short length, BigDecimal rental_rate,List<ActorDTO> actors) {
         this.filmId = filmId;
         this.title = title;
-        this.category = category;
+        this.categoryDTO = categoryDTO;
         this.description = description;
         this.releaseYear = releaseYear;
         this.length = length;
@@ -53,12 +56,12 @@ public class FilmDTO {
         this.title = title;
     }
 
-    public Category getCategory() {
-        return category;
+    public CategoryDTO getCategoryDTO() {
+        return categoryDTO;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setCategoryDTO(CategoryDTO categoryDTO) {
+        this.categoryDTO = categoryDTO;
     }
 
     public String getDescription() {
