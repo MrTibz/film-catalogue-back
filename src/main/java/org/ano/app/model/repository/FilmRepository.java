@@ -103,4 +103,14 @@ public class FilmRepository {
                         .anyMatch(a -> (a.getFirst_name() + " " + a.getLast_name())
                                 .equalsIgnoreCase(actorName)));
     }
+
+    public Optional<Film> getFilmWithActorsAndCategory(short filmId) {
+        final StreamConfiguration<Film> sc = StreamConfiguration.of(Film.class)
+                .joining(Film$.actors)  // Eagerly load the actors
+                .joining(Film$.category); // Eagerly load the category
+
+        return jpaStreamer.stream(sc)
+                .filter(Film$.filmId.equal(filmId))
+                .findFirst();
+    }
 }

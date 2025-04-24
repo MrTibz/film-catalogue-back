@@ -34,16 +34,13 @@ public class FilmResource {
     FilmService filmService;
 
     @GET
-    @Path("/film/{filmId}")
+    @Path("/movie/{filmId}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getFilmById(@PathParam("filmId") short filmId) {
-        return filmRepository.getFilm(filmId)
-                .map(film -> {
-                    FilmDTO dto = FilmMapper.toDTO(film);
-                    return Response.ok(dto).build();
-                })
-                .orElse(Response.status(Response.Status.NOT_FOUND)
-                        .entity(Map.of("error", "Film non trouvé"))
+        Optional<Film> filmOpt = filmRepository.getFilmWithActorsAndCategory(filmId);  // This method eagerly loads actors and category
+        return filmOpt.map(film -> Response.ok(FilmMapper.toDTO(film)).build())
+                .orElseGet(() -> Response.status(Response.Status.NOT_FOUND)
+                        .entity(Map.of("error", "Film not found"))
                         .build());
     }
 
