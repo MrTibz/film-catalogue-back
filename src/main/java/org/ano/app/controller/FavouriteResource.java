@@ -7,6 +7,7 @@ import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
+import org.ano.app.dto.FilmDTO;
 import org.ano.app.model.Film;
 import org.ano.app.service.FavouriteService;
 import org.ano.app.service.SessionService;
@@ -25,7 +26,7 @@ public class FavouriteResource {
     SessionService sessionService;
 
     private Long getUserId(HttpHeaders headers) {
-        String token = headers.getHeaderString("X-Session-Token");
+        String token = headers.getHeaderString("X-Token");
         if (token == null || sessionService.getUserIdFromToken(token) == null) {
             throw new WebApplicationException("Non authentifié", Response.Status.UNAUTHORIZED);
         }
@@ -34,7 +35,7 @@ public class FavouriteResource {
     }
 
     @GET
-    public List<Film> list(@Context HttpHeaders headers) {
+    public List<FilmDTO> list(@Context HttpHeaders headers) {
         Long userId = getUserId(headers);
         return service.listFavourites(userId);
     }

@@ -4,6 +4,8 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import org.ano.app.dto.ActorDTO;
+import org.ano.app.dto.CategoryDTO;
 import org.ano.app.dto.FilmDTO;
 import org.ano.app.dto.FilmLiteDTO;
 import org.ano.app.model.Film;
