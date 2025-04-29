@@ -7,6 +7,7 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import org.ano.app.dto.ActorDTO;
 import org.ano.app.dto.FilmDTO;
 import org.ano.app.dto.FilmLiteDTO;
 import org.ano.app.mapper.FilmMapper;
@@ -14,10 +15,7 @@ import org.ano.app.model.Film;
 import org.ano.app.model.repository.FilmRepository;
 import org.ano.app.service.FilmService;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
@@ -63,53 +61,67 @@ public class FilmResource {
 
     @GET
     @Path("/actors/{startsWith}")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String actors(String startsWith) {
-        return filmRepository.actorsFromMovies(startsWith)
-                .map(f -> String.format("%s \t (%d min): \t %s",
-                        f.getTitle(),
-                        f.getLength(),
-                        f.getActors().stream()
-                                .map(a -> String.format("%s %s",
-                                        a.getFirst_name(),
-                                        a.getLast_name()))
-                                .collect(Collectors.joining(", "))))
-                .collect(Collectors.joining("\n"));
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response actors(String startsWith) {
+        List<FilmDTO> films = filmRepository.actorsFromMovies(startsWith)
+                .map(FilmMapper::toDTO)
+                .collect(Collectors.toList());
+
+        // Vérifie si aucun film n’a été trouvé
+        if (films.isEmpty()) {
+            return Response.status(Response.Status.NOT_FOUND)
+                    .entity(Map.of("error", "Film non trouvé commençant par : " + startsWith ))
+                    .build();
+        }
+
+        return Response.ok(films).build();
+
     }
 
     @GET
     @Path("/film/id/{filmId}/actors")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getActorsFromFilm (short filmId){
-        return filmRepository.getActorsFromFilm(filmId)
-                .map(f -> String.format("%s : %s",
-                        f.getTitle(),
-                        f.getActors().stream()
-                                .map(a-> String.format("%s %s",
-                                        a.getFirst_name(),
-                                        a.getLast_name()))
-                                .collect(Collectors.joining(", "))))
-                .collect(Collectors.joining("\n"));
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getActorsFromFilm (short filmId){
+        // Récupère les films correspondant à l'ID
+        List<Film> films = filmRepository.getActorsFromFilm(filmId).collect(Collectors.toList());
+
+        // Vérifie si aucun film n’a été trouvé
+        if (films.isEmpty()) {
+            return Response.status(Response.Status.NOT_FOUND)
+                    .entity(Map.of("error", "Film non trouvé pour l'ID : " + filmId))
+                    .build();
+        }
+
+        List<ActorDTO> actors = filmRepository.getActorsFromFilm(filmId)
+                .flatMap(f -> f.getActors().stream()
+                        .map(a -> new ActorDTO(a.getFirst_name(), a.getLast_name())))
+                .collect(Collectors.toList());
+
+        return Response.ok(actors).build();
     }
 
     @GET
     @Path("/film/title/{title}/actors")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getActorsFromTitle (String title){
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getActorsFromTitle(String title) {
         Optional<Film> film = filmRepository.getFilmId(title);
         short filmId = -1;
         if (film.isPresent()) {
             filmId = film.get().getFilmId();
         }
-        return filmId == -1 ? "Film non trouvé." : filmRepository.getActorsFromFilm(filmId)
-                .map(f -> String.format("%s : %s",
-                        f.getTitle(),
-                        f.getActors().stream()
-                                .map(a-> String.format("%s %s",
-                                        a.getFirst_name(),
-                                        a.getLast_name()))
-                                .collect(Collectors.joining(", "))))
-                .collect(Collectors.joining("\n"));
+
+        if (filmId == -1) {
+            return Response.status(Response.Status.NOT_FOUND)
+                    .entity("{\"message\": \"Film non trouvé.\"}")
+                    .build();
+        }
+
+        List<ActorDTO> actors = filmRepository.getActorsFromFilm(filmId)
+                .flatMap(f -> f.getActors().stream()
+                        .map(a -> new ActorDTO(a.getFirst_name(), a.getLast_name())))
+                .collect(Collectors.toList());
+
+        return Response.ok(actors).build();
     }
 
 

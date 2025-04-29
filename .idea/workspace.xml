@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b95be99-9189-41a3-a813-3ae22bf74ce0" name="Changes" comment="Ajout des Users&#10;correction mineurs mais non fonctionnelles" />
+    <list default="true" id="8b95be99-9189-41a3-a813-3ae22bf74ce0" name="Changes" comment="Ajout des Users&#10;correction mineurs mais non fonctionnelles">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ano/app/controller/FilmResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ano/app/controller/FilmResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ano/app/dto/ActorDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ano/app/dto/ActorDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quarkus_Film-catalogue-dev.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quarkus_Film-catalogue-dev.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/build-metrics.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/build-metrics.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ano/app/controller/FilmResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ano/app/controller/FilmResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ano/app/dto/ActorDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ano/app/dto/ActorDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/null/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/null/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/quarkus/bootstrap/dev-app-model.dat" beforeDir="false" afterPath="$PROJECT_DIR$/target/quarkus/bootstrap/dev-app-model.dat" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,7 +56,7 @@
     "JUnit.All in Quarkus_Film-catalogue.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "users",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/archi/Documents/GitHub/film-catalogue-back",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"

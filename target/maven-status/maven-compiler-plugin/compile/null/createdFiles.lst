@@ -1,1 +1,5 @@
+org/ano/app/dto/FilmLiteDTO.class
+org/ano/app/controller/ActorResource.class
+org/ano/app/model/repository/ActorRepository.class
+org/ano/app/mapper/ActorMapper.class
 org/ano/app/mapper/CategoryMapper.class
