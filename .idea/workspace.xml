@@ -4,18 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b95be99-9189-41a3-a813-3ae22bf74ce0" name="Changes" comment="Ajout des Users&#10;correction mineurs mais non fonctionnelles">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="8b95be99-9189-41a3-a813-3ae22bf74ce0" name="Changes" comment="Modification des derniers REST texplain =&gt; JSON">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ano/app/controller/AuthResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ano/app/controller/FavouriteResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ano/app/dto/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ano/app/dto/SignupRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ano/app/dto/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ano/app/model/Favourite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ano/app/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ano/app/model/repository/FavouriteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ano/app/model/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ano/app/security/AuthUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ano/app/service/FavouriteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ano/app/service/SessionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ano/app/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ano/app/controller/FilmResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ano/app/controller/FilmResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ano/app/dto/ActorDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ano/app/dto/ActorDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Quarkus_Film-catalogue-dev.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quarkus_Film-catalogue-dev.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Quarkus_Film-catalogue-dev.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/build-metrics.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/build-metrics.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ano/app/controller/FilmResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ano/app/controller/FilmResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ano/app/dto/ActorDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ano/app/dto/ActorDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/null/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/null/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/quarkus/bootstrap/dev-app-model.dat" beforeDir="false" afterPath="$PROJECT_DIR$/target/quarkus/bootstrap/dev-app-model.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/null/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/null/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/quarkus/bootstrap/dev-app-model.dat" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745911048907</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Modification des derniers REST texplain =&gt; JSON">
+      <option name="closed" value="true" />
+      <created>1745915417317</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1745915417317</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -163,6 +182,7 @@
     <MESSAGE value="Modification de /v1/movie/filmId" />
     <MESSAGE value="Ajout des Users" />
     <MESSAGE value="Ajout des Users&#10;correction mineurs mais non fonctionnelles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout des Users&#10;correction mineurs mais non fonctionnelles" />
+    <MESSAGE value="Modification des derniers REST texplain =&gt; JSON" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modification des derniers REST texplain =&gt; JSON" />
   </component>
 </project>
