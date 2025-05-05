@@ -4,13 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b95be99-9189-41a3-a813-3ae22bf74ce0" name="Changes" comment="USER SIGNUP/LOGIN FONCTIONNELS&#10;FAVOURITE à travailler">
+    <list default="true" id="8b95be99-9189-41a3-a813-3ae22bf74ce0" name="Changes" comment="Favourite fonctionne : il retourne une liste de FILMDTO">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ano/app/config/OpenApiSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/ano/app/controller/FavouriteResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ano/app/controller/FavouriteResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ano/app/service/FavouriteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ano/app/service/FavouriteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ano/app/service/FilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ano/app/service/FilmService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Quarkus_Film-catalogue-dev.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Quarkus_Film-catalogue-dev.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/build-metrics.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/build-metrics.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ano/app/controller/FavouriteResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ano/app/controller/FavouriteResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ano/app/model/Actor$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ano/app/model/Actor$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ano/app/model/Film$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ano/app/model/Film$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/org/ano/app/model/Actor$.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/org/ano/app/model/Actor$.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/org/ano/app/model/Film$.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/org/ano/app/model/Film$.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/null/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/null/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/null/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/null/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/quarkus/bootstrap/dev-app-model.dat" beforeDir="false" afterPath="$PROJECT_DIR$/target/quarkus/bootstrap/dev-app-model.dat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +62,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/archi/Documents/GitHub/film-catalogue-back",
+    "last_opened_file_path": "/Users/archi/Documents/GitHub/film-catalogue/film-catalogue-back",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
@@ -165,7 +173,23 @@
       <option name="project" value="LOCAL" />
       <updated>1745935810263</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Favourite fonctionne : il retourne une liste de FILMDTO">
+      <option name="closed" value="true" />
+      <created>1745939090871</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1745939090871</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Favourite fonctionne : il retourne une liste de FILMDTO">
+      <option name="closed" value="true" />
+      <created>1745939215772</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1745939215772</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -177,6 +201,7 @@
     <MESSAGE value="Ajout des Users&#10;correction mineurs mais non fonctionnelles" />
     <MESSAGE value="Modification des derniers REST texplain =&gt; JSON" />
     <MESSAGE value="USER SIGNUP/LOGIN FONCTIONNELS&#10;FAVOURITE à travailler" />
-    <option name="LAST_COMMIT_MESSAGE" value="USER SIGNUP/LOGIN FONCTIONNELS&#10;FAVOURITE à travailler" />
+    <MESSAGE value="Favourite fonctionne : il retourne une liste de FILMDTO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Favourite fonctionne : il retourne une liste de FILMDTO" />
   </component>
 </project>

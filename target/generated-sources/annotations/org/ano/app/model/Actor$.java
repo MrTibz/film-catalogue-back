@@ -19,21 +19,21 @@ import java.util.Set;
 public final class Actor$ {
     
     /**
-     * This Field corresponds to the {@link Actor} field "last_update".
-     */
-    public static final ComparableField<Actor, Timestamp> last_update = ComparableField.create(
-        Actor.class,
-        "last_update",
-        actor -> {throw new IllegalJavaBeanException(Actor.class, "last_update");},
-        false
-    );
-    /**
      * This Field corresponds to the {@link Actor} field "actor_id".
      */
     public static final ShortField<Actor> actor_id = ShortField.create(
         Actor.class,
         "actor_id",
         actor -> {throw new IllegalJavaBeanException(Actor.class, "actor_id");},
+        false
+    );
+    /**
+     * This Field corresponds to the {@link Actor} field "films".
+     */
+    public static final ReferenceField<Actor, Set<Film>> films = ReferenceField.create(
+        Actor.class,
+        "films",
+        Actor::getFilms,
         false
     );
     /**
@@ -46,21 +46,21 @@ public final class Actor$ {
         false
     );
     /**
+     * This Field corresponds to the {@link Actor} field "last_update".
+     */
+    public static final ComparableField<Actor, Timestamp> last_update = ComparableField.create(
+        Actor.class,
+        "last_update",
+        actor -> {throw new IllegalJavaBeanException(Actor.class, "last_update");},
+        false
+    );
+    /**
      * This Field corresponds to the {@link Actor} field "last_name".
      */
     public static final StringField<Actor> last_name = StringField.create(
         Actor.class,
         "last_name",
         actor -> {throw new IllegalJavaBeanException(Actor.class, "last_name");},
-        false
-    );
-    /**
-     * This Field corresponds to the {@link Actor} field "films".
-     */
-    public static final ReferenceField<Actor, Set<Film>> films = ReferenceField.create(
-        Actor.class,
-        "films",
-        Actor::getFilms,
         false
     );
 }

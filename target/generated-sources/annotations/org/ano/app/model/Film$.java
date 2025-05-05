@@ -20,12 +20,30 @@ import java.util.List;
 public final class Film$ {
     
     /**
-     * This Field corresponds to the {@link Film} field "replacement_cost".
+     * This Field corresponds to the {@link Film} field "rating".
      */
-    public static final ComparableField<Film, BigDecimal> replacement_cost = ComparableField.create(
+    public static final ReferenceField<Film, Object> rating = ReferenceField.create(
         Film.class,
-        "replacement_cost",
-        film -> {throw new IllegalJavaBeanException(Film.class, "replacement_cost");},
+        "rating",
+        Film::getRating,
+        false
+    );
+    /**
+     * This Field corresponds to the {@link Film} field "length".
+     */
+    public static final ComparableField<Film, Short> length = ComparableField.create(
+        Film.class,
+        "length",
+        Film::getLength,
+        false
+    );
+    /**
+     * This Field corresponds to the {@link Film} field "rental_duration".
+     */
+    public static final ShortField<Film> rental_duration = ShortField.create(
+        Film.class,
+        "rental_duration",
+        film -> {throw new IllegalJavaBeanException(Film.class, "rental_duration");},
         false
     );
     /**
@@ -47,12 +65,12 @@ public final class Film$ {
         false
     );
     /**
-     * This Field corresponds to the {@link Film} field "actors".
+     * This Field corresponds to the {@link Film} field "original_language_id".
      */
-    public static final ReferenceField<Film, List<Actor>> actors = ReferenceField.create(
+    public static final ComparableField<Film, Short> original_language_id = ComparableField.create(
         Film.class,
-        "actors",
-        Film::getActors,
+        "original_language_id",
+        film -> {throw new IllegalJavaBeanException(Film.class, "original_language_id");},
         false
     );
     /**
@@ -65,12 +83,21 @@ public final class Film$ {
         false
     );
     /**
-     * This Field corresponds to the {@link Film} field "language_id".
+     * This Field corresponds to the {@link Film} field "title".
      */
-    public static final ShortField<Film> language_id = ShortField.create(
+    public static final StringField<Film> title = StringField.create(
         Film.class,
-        "language_id",
-        film -> {throw new IllegalJavaBeanException(Film.class, "language_id");},
+        "title",
+        Film::getTitle,
+        false
+    );
+    /**
+     * This Field corresponds to the {@link Film} field "replacement_cost".
+     */
+    public static final ComparableField<Film, BigDecimal> replacement_cost = ComparableField.create(
+        Film.class,
+        "replacement_cost",
+        film -> {throw new IllegalJavaBeanException(Film.class, "replacement_cost");},
         false
     );
     /**
@@ -83,48 +110,21 @@ public final class Film$ {
         false
     );
     /**
-     * This Field corresponds to the {@link Film} field "rental_duration".
+     * This Field corresponds to the {@link Film} field "special_features".
      */
-    public static final ShortField<Film> rental_duration = ShortField.create(
+    public static final ReferenceField<Film, Object> special_features = ReferenceField.create(
         Film.class,
-        "rental_duration",
-        film -> {throw new IllegalJavaBeanException(Film.class, "rental_duration");},
+        "special_features",
+        film -> {throw new IllegalJavaBeanException(Film.class, "special_features");},
         false
     );
     /**
-     * This Field corresponds to the {@link Film} field "original_language_id".
+     * This Field corresponds to the {@link Film} field "actors".
      */
-    public static final ComparableField<Film, Short> original_language_id = ComparableField.create(
+    public static final ReferenceField<Film, List<Actor>> actors = ReferenceField.create(
         Film.class,
-        "original_language_id",
-        film -> {throw new IllegalJavaBeanException(Film.class, "original_language_id");},
-        false
-    );
-    /**
-     * This Field corresponds to the {@link Film} field "length".
-     */
-    public static final ComparableField<Film, Short> length = ComparableField.create(
-        Film.class,
-        "length",
-        Film::getLength,
-        false
-    );
-    /**
-     * This Field corresponds to the {@link Film} field "description".
-     */
-    public static final StringField<Film> description = StringField.create(
-        Film.class,
-        "description",
-        Film::getDescription,
-        false
-    );
-    /**
-     * This Field corresponds to the {@link Film} field "rating".
-     */
-    public static final ReferenceField<Film, Object> rating = ReferenceField.create(
-        Film.class,
-        "rating",
-        Film::getRating,
+        "actors",
+        Film::getActors,
         false
     );
     /**
@@ -137,21 +137,21 @@ public final class Film$ {
         false
     );
     /**
-     * This Field corresponds to the {@link Film} field "special_features".
+     * This Field corresponds to the {@link Film} field "description".
      */
-    public static final ReferenceField<Film, Object> special_features = ReferenceField.create(
+    public static final StringField<Film> description = StringField.create(
         Film.class,
-        "special_features",
-        film -> {throw new IllegalJavaBeanException(Film.class, "special_features");},
+        "description",
+        Film::getDescription,
         false
     );
     /**
-     * This Field corresponds to the {@link Film} field "title".
+     * This Field corresponds to the {@link Film} field "language_id".
      */
-    public static final StringField<Film> title = StringField.create(
+    public static final ShortField<Film> language_id = ShortField.create(
         Film.class,
-        "title",
-        Film::getTitle,
+        "language_id",
+        film -> {throw new IllegalJavaBeanException(Film.class, "language_id");},
         false
     );
 }

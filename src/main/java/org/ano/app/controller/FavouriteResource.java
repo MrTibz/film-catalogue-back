@@ -11,9 +11,11 @@ import org.ano.app.dto.FilmDTO;
 import org.ano.app.model.Film;
 import org.ano.app.service.FavouriteService;
 import org.ano.app.service.SessionService;
+import org.eclipse.microprofile.openapi.annotations.security.SecurityRequirement;
 
 import java.util.List;
 
+@SecurityRequirement(name = "sessionAuth")
 @Path("/favourites")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)

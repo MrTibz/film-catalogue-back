@@ -27,5 +27,6 @@
 /Users/archi/Documents/GitHub/film-catalogue/film-catalogue-back/src/main/java/org/ano/app/dto/LoginRequest.java
 /Users/archi/Documents/GitHub/film-catalogue/film-catalogue-back/src/main/java/org/ano/app/service/FavouriteService.java
 /Users/archi/Documents/GitHub/film-catalogue/film-catalogue-back/src/main/java/org/ano/app/model/repository/CategoryRepository.java
+/Users/archi/Documents/GitHub/film-catalogue/film-catalogue-back/src/main/java/org/ano/app/config/OpenApiSecurityConfig.java
 /Users/archi/Documents/GitHub/film-catalogue/film-catalogue-back/src/main/java/org/ano/app/model/repository/UserRepository.java
 /Users/archi/Documents/GitHub/film-catalogue/film-catalogue-back/src/main/java/org/ano/app/mapper/ActorMapper.java
